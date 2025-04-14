@@ -46,8 +46,18 @@ def bubble_sort(seznam):
             if seznam[a] > seznam[b]:
                 seznam[a], seznam[b] = seznam[b],seznam[a]
     return seznam
+
+def insertion_sort(seznam):
+    for j in range(1, len(seznam)):
+        value = seznam[j]
+        i = j - 1
+        while (seznam[i] > value) and (i >= 0):
+            seznam[i+1] = seznam[i]
+            i = i - 1
+        seznam[j-1] = value
+    return seznam
 def main():
-    a = bubble_sort([84, 12,17,45,23])
+    a = insertion_sort([9,5,1,4,3])
     print(a)
 
 if __name__ == '__main__':
